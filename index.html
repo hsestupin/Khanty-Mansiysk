@@ -58,11 +58,11 @@
     <!-- Header -->
     <header id="top" class="header">
         <div class="text-vertical-center">
-            <h1>Время путешествовать</h1>
-          <h1>с Сергеем и Яной!</h1>
-            <hr class="small">
+            <!--<h1>Время путешествовать</h1>-->
+          <!--<h1>с Сергеем и Яной!</h1>-->
+            <!--<hr class="small">-->
             <!--<h3>Free Bootstrap Themes &amp; Templates</h3>-->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/YX_sRfPqoTA" frameborder="1" allowfullscreen></iframe>
+            <iframe style="margin-top: -180px" width="700" height="430" src="https://www.youtube.com/embed/YX_sRfPqoTA" frameborder="1" allowfullscreen></iframe>
             <br>
             <a href="#about" class="btn btn-dark btn-lg">Подробнее</a>
         </div>
@@ -73,17 +73,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                  <h2>Ждем вас <b>22 сентября</b></h2>
+                  <h2>Ждем вас <b>22 сентября</b> в Ханты-Мансийске</h2>
                     <hr class="small">
                   <!--<p class="lead">This theme features some wonderful photography courtesy of <a target="_blank" href="http://join.deathtothestockphoto.com/">Death to the Stock Photo</a>.</p>-->
-                  <div class="center-block" style="width: 600px; font-size: 22px">Свадебная программа:
+                    <div class="center-block font-announcement" style="width: 600px"><b>Свадебная программа:</b>
                     <ul class="list-unstyled text-left">
-                      <li>15-00 &nbsp; Сбор гостей у ЗАГСа по адресу ул. Дзержинского, дом 7</li>
-                      <li>15-30 &nbsp; Церемония бракосочетания</li>
-                      <li>16-00 &nbsp; Фотосессия с гостями</li>
-                      <li>18-00 &nbsp; Начало банкета в ресторане <a href="#contact">Молли О'Брайн</a></li>
+                        <li><b>15-00</b> &nbsp; Сбор гостей у ЗАГСа по адресу ул. Дзержинского, дом 7</li>
+                        <li><b>15-30</b> &nbsp; Церемония бракосочетания</li>
+                        <li><b>16-00</b> &nbsp; Фотосессия с гостями</li>
+                        <li><b>18-00</b> &nbsp; Начало банкета в ресторане <a href="#contact">Молли О'Брайн</a></li>
                     </ul>
                   </div>
+                    <hr class="small">
+                    <div class="center-block font-announcement" >
+                        Просим вас ответить на несколько <a href="https://ru.surveymonkey.com/r/92JM95G"><b>вопросов</b></a>, чтобы мы
+                        знали, сможете ли вы провести с нами этот день. <br>Заранее спасибо!
+                    </div>
                 </div>
             </div>
             <!-- /.row -->
@@ -179,32 +184,44 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a >
                                     <img class="img-portfolio img-responsive" src="img/wed4.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a >
                                     <img class="img-portfolio img-responsive" src="img/wed1.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a >
                                     <img class="img-portfolio img-responsive" src="img/wed2.jpg">
                                 </a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a >
                                     <img class="img-portfolio img-responsive" src="img/wed5.jpg">
                                 </a>
                             </div>
                         </div>
+                    </div>
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                        <!-- The Close Button -->
+                        <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+                        <!-- Modal Content (The Image) -->
+                        <img class="modal-content" id="img01">
+
+                        <!-- Modal Caption (Image Text) -->
+                        <div id="caption"></div>
                     </div>
                     <!-- /.row (nested) -->
                     <!--<a href="#" class="btn btn-dark">View More Items</a>-->
@@ -363,6 +380,34 @@
         }
         // Enable map zooming with mouse scroll when the user clicks the map
     $('.map').on('click', onMapClickHandler);
+
+    // Get the modal
+
+    var modal = document.getElementById('myModal');
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+//    var img = document.getElementById('myImg');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+
+    var elements = document.getElementsByClassName("img-portfolio");
+    for (i in elements) {
+      img = elements[i]
+      img.onclick = function(){
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;
+      }
+    }
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
     </script>
 
 </body>
