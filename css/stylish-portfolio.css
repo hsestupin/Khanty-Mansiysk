@@ -22,7 +22,9 @@ body {
     vertical-align: middle;
 }
 
-.font-announcement {}
+.font-announcement {
+    font-size: 22px
+}
 
 .text-vertical-center h1 {
     margin: 0;
