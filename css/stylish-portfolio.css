@@ -26,6 +26,22 @@ body {
     font-size: 22px
 }
 
+hr.my-heart {
+    border-top: 1px double #8c8b8b;
+    text-align: center;
+    max-width: 400px
+}
+hr.my-heart:after {
+    content: '\002665';
+    display: inline-block;
+    position: relative;
+    top: -15px;
+    padding: 0 10px;
+    background: white;
+    color: pink;
+    font-size: 18px;
+}
+
 .my-list-padding-left {
     padding-left: 20%;
 }
