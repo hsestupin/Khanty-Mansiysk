@@ -22,8 +22,12 @@ body {
     vertical-align: middle;
 }
 
-.font-announcement {
+.my-font-announcement {
     font-size: 22px
+}
+
+.my-list-padding-left {
+    padding-left: 20%;
 }
 
 .text-vertical-center h1 {
